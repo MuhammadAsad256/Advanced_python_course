@@ -45,7 +45,15 @@ else:
 
 # Q6:- Generate Fibonacci Series up to n terms:
 
+first_num = 0 
+second_num = 1
+print(first_num)
 
+for i in range (10):
+    print(second_num)
+    third_num = first_num + second_num
+    first_num = second_num
+    second_num = third_num
 
 # Q7:- Find the Largest Among Three Numbers:
 
@@ -133,6 +141,21 @@ for digit in str(number):
 print("Sum of digits:", sum_of_digits)
 
 # Q4:- Find the Longest Common Prefix in a List of Strings:
+def longest_common_prefix(strings):
+    if not strings:
+        return ""
+
+    prefix = strings[0]
+    for s in strings[1:]:
+        while not s.startswith(prefix):
+            prefix = prefix[:-1]
+            if not prefix:
+                return ""
+    return prefix
+
+strings = input("Enter strings separated by space: ").split()
+print("Longest common prefix:", longest_common_prefix(strings))
+
 # Q5:- Check if a Number is a Prime Number:
 
 num = int(input("Enter a number: "))
