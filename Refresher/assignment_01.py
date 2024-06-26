@@ -116,19 +116,8 @@ print("Median is", median)
 # Q2:- Count the Number of Words in a Sentence:
 
 str = input("enter sentence: ")
-s = 0
-ch = 0
-for i in str:
-    if i == " ":
-        if ch!=0:
-            s=s+1
-        ch = 0
-    else:
-        ch=ch+1
-    
-if ch!= 0:
-    s=s+1
-print(s) 
+words = str.split()
+print(len(words))
 
 # Q3:- Calculate the Sum of Digits in a Number:
 
@@ -141,6 +130,7 @@ for digit in str(number):
 print("Sum of digits:", sum_of_digits)
 
 # Q4:- Find the Longest Common Prefix in a List of Strings:
+
 def longest_common_prefix(strings):
     if not strings:
         return ""
@@ -161,7 +151,6 @@ print("Longest common prefix:", longest_common_prefix(strings))
 num = int(input("Enter a number: "))
 
 if num > 1:
-   # check condition
    for i in range(2,num):
        if (num % i) == 0:
            print(num,"is not prime number")
