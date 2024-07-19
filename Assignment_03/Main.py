@@ -25,13 +25,10 @@ def send_quotes():
     print(f"Today is: {today.strftime('%A')}")
     if today.weekday() == 0:
         quotes = pd.read_csv("quotes.csv")
-        
 
         emails = pd.read_csv("emails.csv")
 
-
         quote = random.choice(quotes["quote"])
-        
 
         for index, row in emails.iterrows():
             name = row["name"]
