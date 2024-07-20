@@ -23,13 +23,22 @@ def send_email(to_address, subject, message):
 def send_quotes():
     today = datetime.today()
     print(f"Today is: {today.strftime('%A')}")
-    if today.weekday() == 0:
-        quotes = pd.read_csv("quotes.csv")
-
-        emails = pd.read_csv("emails.csv")
-
+    
+    if today.weekday() == 0: 
+        try:
+            quotes = pd.read_csv("quotes.csv")
+        except FileNotFoundError:
+            print("Error: quotes.csv not found.")
+            return
+        
+        try:
+            emails = pd.read_csv("emails.csv")
+        except FileNotFoundError:
+            print("Error: emails.csv not found.")
+            return
+        
         quote = random.choice(quotes["quote"])
-
+        
         for index, row in emails.iterrows():
             name = row["name"]
             email = row["email"]
@@ -41,4 +50,4 @@ def send_quotes():
 
 if __name__ == "__main__":
     send_quotes()
-    
+
