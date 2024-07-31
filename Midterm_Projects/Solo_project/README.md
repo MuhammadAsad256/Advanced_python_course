@@ -9,6 +9,7 @@ This Python script is designed to notify students about their absence from class
 - **Identify Absences:** Checks the attendance status for each student and identifies those who were absent.
 - **Send Notifications:** Sends an email notification to the absent students informing them about their absence and requesting an explanation.
 - **Email Configuration:** Utilizes Gmail’s SMTP server for sending emails.
+- **Day Check:** Only performs attendance checks and sends notifications on weekdays (Monday through Friday).
 
 ## Requirements
 
