@@ -12,8 +12,8 @@ SHEETY_ENDPOINT = "https://api.sheety.co/dc6cc07e5d1ffdd8032e9ef02d0034cc/sheet1
 # Gmail SMTP settings
 SMTP_SERVER = "smtp.gmail.com"
 SMTP_PORT = 587
-GMAIL_USER = "asadm2839@gmail.com"
-GMAIL_PASSWORD = "gumb plpe alji gumf"
+GMAIL_USER = "example@gmail.com"
+GMAIL_PASSWORD = "Password"
 
 # Function to fetch data from Sheety
 def fetch_data_from_sheety():
