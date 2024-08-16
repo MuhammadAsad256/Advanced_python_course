@@ -57,9 +57,8 @@ for i in range (10):
 
 # Q7:- Find the Largest Among Three Numbers:
 
-num1 = int(input("Enter First Number: "))
-num2 = int(input("Enter Second Number: "))
-num3 = int(input("Enter Third Number: "))
+numbers = input("Enter three numbers separated by space: ").split()
+num1, num2, num3 = map(int, numbers)
 
 if num1 >= num2 and num1 >= num3:
     largest = num1
@@ -68,7 +67,7 @@ elif num2 >= num1 and num2 >= num3:
 else:
     largest = num3
 
-print("The largest number is:", largest)
+print("The Largest Number is:", largest)
 
 # Q8:- Calculate Simple Interest:
 
@@ -100,9 +99,8 @@ else:
 
 # Q1:- Find the Median of Three Numbers:
 
-num1 = int(input("Enter First Number: "))
-num2 = int(input("Enter Second Number: "))
-num3 = int(input("Enter Third Number: "))
+numbers = input("Enter three numbers separated by space: ").split()
+num1, num2, num3 = map(int, numbers)
 
 if (num1 >= num2 and num1 <= num3) or (num1 >= num3 and num1 <= num2):
     median = num1
@@ -111,7 +109,7 @@ elif (num2 >= num1 and num2 <= num3) or (num2 >= num3 and num2 <= num1):
 else:
     median = num3
 
-print("Median is", median)
+print("The Median Number is:", median)
 
 # Q2:- Count the Number of Words in a Sentence:
 
@@ -157,3 +155,25 @@ if num > 1:
            break
    else:
        print(num,"is prime number")
+
+#                        Bonus
+# Q1:- Find the Longest Consecutive Sequence in a List of Integers:
+
+def longest_consecutive_sequence(nums):
+    num_set = set(nums)
+    long_sequence = 0
+    for num in num_set:
+        if num - 1 not in num_set:
+            current_num = num
+            current_sequence = 1
+            while current_num + 1 in num_set:
+                current_num += 1
+                current_sequence += 1
+
+            if current_sequence > longest_sequence:
+                longest_sequence = current_sequence
+    return long_sequence
+
+nums = input("Enter integers separated by space: ").split()
+nums = [int(num) for num in nums]
+print("Longest consecutive sequence length:", longest_consecutive_sequence(nums))
